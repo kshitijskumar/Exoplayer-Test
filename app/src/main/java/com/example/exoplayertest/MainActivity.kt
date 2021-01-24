@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var player: SimpleExoPlayer
 
-    private var playWhenReady = true
+    private var playWhenReady = false
     private var playBackPosition = 0L
     private var currentWindow = 0
 
@@ -35,8 +35,14 @@ class MainActivity : AppCompatActivity() {
 //            .setMediaId("Do it all for you")
 //            .setUri("https://drive.google.com/file/d/1z1uiN8tALbt_AHokuoUv5Zq8eAYqoZCT/view")
 //            .build()
-        val mediaItem = MediaItem.fromUri("https://firebasestorage.googleapis.com/v0/b/learning-firebase-f7960.appspot.com/o/Alan-Walker-Trevor-Guthrie-Do-It-All-For-You.mp3?alt=media&token=bd2900cc-f89d-45b1-bac9-cf831dc8548b")
-        player.setMediaItem(mediaItem)
+        val doItForYou = MediaItem.fromUri("https://firebasestorage.googleapis.com/v0/b/learning-firebase-f7960.appspot.com/o/Alan-Walker-Trevor-Guthrie-Do-It-All-For-You.mp3?alt=media&token=bd2900cc-f89d-45b1-bac9-cf831dc8548b")
+        val karasunoFly = MediaItem.fromUri("https://firebasestorage.googleapis.com/v0/b/learning-firebase-f7960.appspot.com/o/HAIKYUU_RAP_SONG_Fly_RUSTAGE_ft_CG5%5BGetVideo.watch%5D.mp3?alt=media&token=9843ee81-4a98-4617-b4d4-9b9e989f2fa2")
+        val allTimeLow = MediaItem.fromUri("https://firebasestorage.googleapis.com/v0/b/learning-firebase-f7960.appspot.com/o/Jon%20Bellion%20-%20All%20Time%20Low%20(Official%20Music%20Video).mp3?alt=media&token=00d83a17-81c4-4935-84c4-a54afa858dec")
+
+        player.setMediaItem(doItForYou)
+        player.addMediaItem(karasunoFly)
+        player.addMediaItem(allTimeLow)
+        player.shuffleModeEnabled = true
 
         player.playWhenReady = playWhenReady
         player.seekTo(currentWindow, playBackPosition)
