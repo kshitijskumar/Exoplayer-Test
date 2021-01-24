@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity() {
         player.setMediaItem(doItForYou)
         player.addMediaItem(karasunoFly)
         player.addMediaItem(allTimeLow)
-        player.shuffleModeEnabled = true
 
         player.playWhenReady = playWhenReady
         player.seekTo(currentWindow, playBackPosition)
